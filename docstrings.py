@@ -116,18 +116,18 @@ class C:
         self.it = it
 
 
-def work_it(set_it="flip it and reverse it"):
+def work_it(my_thang="flip it and reverse it"):
     """
     Create and run the C class
 
-    :param set_it: What to set it to, defaults to a stribg of "thing"
-    :type set_it: object, optional
+    :param my_thang: What to set it to, defaults to a string
+    :type my_thang: object, optional
 
     :return: The C class that was created and run
     :rtype: :class:`C`
     """
     c = C(stash="called from work it")
-    c.thing = set_it
+    c.thing = my_thang
     c()
     c.set_b(B())
     return c

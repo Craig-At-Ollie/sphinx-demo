@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>docstrings &#8212; Sphinx-demo 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=def86cc0" />
+    
+    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-demo 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">docstrings</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for docstrings</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="B">
+<a class="viewcode-back" href="../index.html#docstrings.B">[docs]</a>
+<span></span><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is class B, by default it&#39;s full of bs.</span>
+<span class="sd">    A :meth:`make_bs` can be useful for making a list of bs.</span>
+
+<span class="sd">    :ivar items: A list of b character strings</span>
+<span class="sd">    :type items: list[str]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_bs</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span>
+               <span class="s2">&quot;Empty b&quot;</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span>
+                <span class="k">else</span> <span class="s2">&quot;Bs&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> 
+                <span class="k">else</span> <span class="s2">&quot;single b&quot;</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="B.make_bs">
+<a class="viewcode-back" href="../index.html#docstrings.B.make_bs">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">make_bs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">user_lower</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make some Bs, makes a list of Bs and returns them</span>
+<span class="sd">        </span>
+<span class="sd">        :param count: The count of how many Bs to make</span>
+<span class="sd">        :type count: int</span>
+
+<span class="sd">        :param user_lower: When True the bs will be lowercase, Defaults to true</span>
+<span class="sd">        :type user_lower: bool, optional</span>
+
+<span class="sd">        :return: The list of bs</span>
+<span class="sd">        :rtype: list[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span>  <span class="p">[</span><span class="s2">&quot;b&quot;</span> <span class="k">if</span> <span class="n">user_lower</span> <span class="k">else</span> <span class="s2">&quot;B&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">)]</span></div>
+</div>
+
+
+
+
+<div class="viewcode-block" id="C">
+<a class="viewcode-back" href="../index.html#docstrings.C">[docs]</a>
+<span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is the C class.</span>
+<span class="sd">    It contains a :attr:`thing` property and the method :meth:`set_b`.</span>
+
+<span class="sd">    :param thing: The thing to set it to when initializing, defaults to None</span>
+<span class="sd">    :type thing: object, optional</span>
+
+<span class="sd">    :keyword stash: What to set the stash to, this is a keyword in kwargs</span>
+<span class="sd">    :type stash: object, optional</span>
+
+<span class="sd">    :cvar it: What it is. Note this is a class var, but it gets bundled with other vars</span>
+<span class="sd">    :type it: object</span>
+
+<span class="sd">    :ivar stash: A stash to store something, note this is an instance var</span>
+<span class="sd">    :type stash: object</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">it</span><span class="o">=</span><span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thing</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        NOTE: dunder method docstrings are ignored and should be documented</span>
+<span class="sd">        at the class level</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">thing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">it</span> <span class="o">=</span> <span class="n">thing</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stash</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;stash&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="C.__call__">
+<a class="viewcode-back" href="../index.html#docstrings.C.__call__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">print_it</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call the class to make it do something. This is displayed because it&#39;s</span>
+<span class="sd">        called out in the autodoc call in the `index.rst` file</span>
+<span class="sd">        </span>
+<span class="sd">        :param print_it: When true, prints it, defaults to True</span>
+<span class="sd">        :type print_it: bool, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">print_it</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">whatsit</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="C.set_b">
+<a class="viewcode-back" href="../index.html#docstrings.C.set_b">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_b</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        set it to class :class:`B`</span>
+
+<span class="sd">        :param b: An instance of the b class to use</span>
+<span class="sd">        :type b: :class:`B`</span>
+
+<span class="sd">        :raises TypeError: the parameter was not an instance of class B</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">it</span> <span class="o">=</span> <span class="n">b</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">whatsit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read Only stringified version of what it is</span>
+
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">it</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">thing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        What it is.</span>
+
+<span class="sd">        :type: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">it</span>
+
+    <span class="nd">@thing</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">thing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">it</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">           Note that the setter is ignored</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">it</span> <span class="o">=</span> <span class="n">it</span></div>
+
+
+
+<div class="viewcode-block" id="work_it">
+<a class="viewcode-back" href="../index.html#docstrings.work_it">[docs]</a>
+<span class="k">def</span> <span class="nf">work_it</span><span class="p">(</span><span class="n">my_thang</span><span class="o">=</span><span class="s2">&quot;flip it and reverse it&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create and run the C class</span>
+
+<span class="sd">    :param my_thang: What to set it to, defaults to a string</span>
+<span class="sd">    :type my_thang: object, optional</span>
+
+<span class="sd">    :return: The C class that was created and run</span>
+<span class="sd">    :rtype: :class:`C`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">stash</span><span class="o">=</span><span class="s2">&quot;called from work it&quot;</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">thing</span> <span class="o">=</span> <span class="n">my_thang</span>
+    <span class="n">c</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">set_b</span><span class="p">(</span><span class="n">B</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">c</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">worked_c</span> <span class="o">=</span> <span class="n">work_it</span><span class="p">()</span>
+    <span class="n">worked_c</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Sphinx-demo 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">docstrings</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    </div>
+  </body>
+</html>
